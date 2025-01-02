@@ -1,3 +1,50 @@
 body {
-    margin: 0;
-} 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Smythe", serif;
+  margin: 0 auto;
+  width: 600px;
+}
+
+header img {
+  width: 100%;
+}
+
+main {
+  padding: 40px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+.emoji {
+  font-size: 78.72px;
+  margin-right: 30px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  border-bottom: solid #d2d2d2 2px;
+}
+
+.ingredients {
+  color: #8b8b8b;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.add-to-cart {
+  margin-left: auto;
+}
+
+.add-to-cart:hover,
+.add-to-cart:active {
+  cursor: pointer;
+}
