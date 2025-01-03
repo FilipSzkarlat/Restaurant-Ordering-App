@@ -20,6 +20,18 @@ h2 {
   font-size: 28px;
 }
 
+button {
+  transition: all 0.5s;
+}
+
+button:hover,
+button:active,
+.add-to-cart:hover,
+.add-to-cart:active {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 .emoji {
   font-size: 78.72px;
   margin-right: 30px;
@@ -42,11 +54,7 @@ h2 {
 
 .add-to-cart {
   margin-left: auto;
-}
-
-.add-to-cart:hover,
-.add-to-cart:active {
-  cursor: pointer;
+  transition: all 0.5s;
 }
 
 #order {
@@ -58,14 +66,31 @@ h2 {
   text-align: center;
 }
 
+.order-price {
+  margin-left: auto;
+}
+
 .order-item,
 .total-price {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   font-size: 28px;
   font-weight: 700;
   margin: 0;
+}
+
+.remove-btn {
+  color: #bbbbbb;
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+  margin-top: 7px;
+  margin-left: 13px;
+}
+
+.remove-btn:hover,
+.remove-btn:active {
+  color: red;
 }
 
 .summary {
@@ -82,9 +107,4 @@ h2 {
   font-size: 16px;
   font-weight: 700;
   margin-top: 50px;
-}
-
-.complete-order-btn:hover,
-.complete-order-btn:active {
-  cursor: pointer;
 }

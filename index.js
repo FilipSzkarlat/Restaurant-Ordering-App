@@ -9,6 +9,7 @@ let totalPrice = 0;
 
 // Event listener for adding items to the cart
 document.addEventListener("click", (e) => {
+  // add item to the order list
   if (e.target.classList.contains("add-to-cart")) {
     const item = e.target.parentElement;
     const name = item.querySelector("h2").textContent;
@@ -18,6 +19,13 @@ document.addEventListener("click", (e) => {
     renderOrder(order);
     // Show the summary section
     summaryEl.style.display = "block";
+    // remove the item from the order list
+  } else if (e.target.classList.contains("remove-btn")) {
+    const item = e.target.parentElement;
+    const name = item.querySelector(".order-name").textContent;
+    const index = order.findIndex((el) => el.name === name);
+    order.splice(index, 1);
+    renderOrder(order);
   }
 });
 
@@ -50,7 +58,8 @@ const renderOrder = (orderArr) => {
     content += `
         <div class="order-item">
             <p class='order-name'>${item.name}</p>
-            <p class='order - price'>$${item.price}</p>
+            <button class="remove-btn">remove</button>
+            <p class='order-price'>$${item.price}</p>
         </div>
         `;
     totalPrice += item.price;
@@ -59,7 +68,8 @@ const renderOrder = (orderArr) => {
   // Rendering the summary
   summaryEl.innerHTML = `
   <div class='total-price'>
-    <p>Total price:</p> <p>$${totalPrice}</p>
+    <p>Total price:</p> 
+    <p class="order-price">$${totalPrice}</p>
   </div>
   <button class="complete-order-btn">Complete order</button>
   `;
