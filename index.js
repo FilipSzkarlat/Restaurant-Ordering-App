@@ -3,6 +3,7 @@ import { menuArray } from "./data.js";
 const menuSection = document.querySelector("#menu");
 const orderSectionList = document.querySelector(".order-list");
 const summaryEl = document.querySelector(".summary");
+const completeOrderBtn = document.querySelector(".complete-order-btn");
 
 let order = [];
 let totalPrice = 0;
@@ -26,6 +27,8 @@ document.addEventListener("click", (e) => {
     const index = order.findIndex((el) => el.name === name);
     order.splice(index, 1);
     renderOrder(order);
+  } else if (e.target.classList.contains("complete-order-btn")) {
+    document.querySelector(".card-details").style.display = "flex";
   }
 });
 
