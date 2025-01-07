@@ -146,3 +146,16 @@ button:active,
 .card-details button {
   margin-bottom: 30px;
 }
+
+#after-payment-info {
+  display: none;
+  margin-top: 45px;
+  margin-bottom: 60px;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  background-color: #ecfdf5;
+  color: #065f46;
+  font-size: 32px;
+  border-radius: 3px;
+}

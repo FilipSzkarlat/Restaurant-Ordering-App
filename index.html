@@ -23,11 +23,28 @@
       </section>
       <section class="card-details">
         <h2 class="details-header">Enter card details</h2>
-        <input type="text" placeholder="Enter your name" />
-        <input type="text" placeholder="Enter card number" />
-        <input type="text" placeholder="Enter CVV" />
-        <button class="complete-order-btn">Pay</button>
+        <form id="payment-form" action="">
+          <input
+            class="form-name"
+            type="text"
+            placeholder="Enter your name"
+            required
+          />
+          <input type="number" placeholder="Enter card number" required />
+          <input
+            type="text"
+            placeholder="Enter CVV"
+            pattern="[0-9]{3}"
+            maxlength="3"
+            minlength="3"
+            required
+          />
+          <button type="submit" class="complete-order-btn submit-payment-btn">
+            Pay
+          </button>
+        </form>
       </section>
+      <section id="after-payment-info"></section>
     </main>
     <script src="index.js" type="module"></script>
   </body>

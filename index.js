@@ -3,7 +3,8 @@ import { menuArray } from "./data.js";
 const menuSection = document.querySelector("#menu");
 const orderSectionList = document.querySelector(".order-list");
 const summaryEl = document.querySelector(".summary");
-const completeOrderBtn = document.querySelector(".complete-order-btn");
+const paymentFormEl = document.querySelector("#payment-form");
+const afterPaymentInfo = document.querySelector("#after-payment-info");
 
 let order = [];
 let totalPrice = 0;
@@ -27,9 +28,19 @@ document.addEventListener("click", (e) => {
     const index = order.findIndex((el) => el.name === name);
     order.splice(index, 1);
     renderOrder(order);
+    // Catching click on Complete order btn
   } else if (e.target.classList.contains("complete-order-btn")) {
     document.querySelector(".card-details").style.display = "flex";
   }
+});
+
+paymentFormEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // const cardNumber = e.target.cardNumber.value;
+  const name = document.querySelector(".form-name").value;
+  // const cardExpiration = e.target.cardExpiration.value;
+  // const cardCvv = e.target.cardCvv.value;
+  showPaymentInfo(name);
 });
 
 // Rendering the menu items
@@ -77,5 +88,16 @@ const renderOrder = (orderArr) => {
   <button class="complete-order-btn">Complete order</button>
   `;
 };
+
+// Pay btn -> showing the payment info
+function showPaymentInfo(name) {
+  document.querySelector(".card-details").style.display = "none";
+  order = [];
+  document.getElementById("order").style.display = "none";
+  renderOrder(order);
+  summaryEl.style.display = "none";
+  afterPaymentInfo.style.display = "flex";
+  afterPaymentInfo.innerHTML = `Thanks, ${name}! Your order is on its way`;
+}
 
 render(menuArray);
