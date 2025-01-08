@@ -31,6 +31,8 @@ document.addEventListener("click", (e) => {
     // Catching click on Complete order btn
   } else if (e.target.classList.contains("complete-order-btn")) {
     document.querySelector(".card-details").style.display = "flex";
+  } else if (e.target.classList.contains("close-popup")) {
+    closePopup();
   }
 });
 
@@ -101,3 +103,14 @@ function showPaymentInfo(name) {
 }
 
 render(menuArray);
+
+// Popup with the discount
+window.onload = function () {
+  setTimeout(() => {
+    document.getElementById("popup").classList.remove("hidden");
+  }, 2000);
+};
+
+function closePopup() {
+  document.getElementById("popup").classList.add("hidden");
+}
