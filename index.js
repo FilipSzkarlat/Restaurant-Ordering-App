@@ -5,7 +5,7 @@ const orderSectionList = document.querySelector(".order-list");
 const summaryEl = document.querySelector(".summary");
 const paymentFormEl = document.querySelector("#payment-form");
 const afterPaymentInfo = document.querySelector("#after-payment-info");
-const starRating = document.querySelector("#star-rating");
+const ratingEl = document.querySelector("#rating");
 
 let order = [];
 let totalPrice = 0;
@@ -112,7 +112,7 @@ function showPaymentInfo(name) {
   summaryEl.style.display = "none";
   afterPaymentInfo.style.display = "flex";
   afterPaymentInfo.innerHTML = `Thanks, ${name}! Your order is on its way`;
-  starRating.style.display = "flex";
+  ratingEl.style.display = "flex";
 }
 
 render(menuArray);

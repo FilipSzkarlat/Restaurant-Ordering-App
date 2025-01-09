@@ -150,7 +150,6 @@ button:active,
 #after-payment-info {
   display: none;
   margin-top: 45px;
-  margin-bottom: 60px;
   justify-content: center;
   align-items: center;
   height: 120px;
@@ -217,11 +216,18 @@ button:active,
 }
 
 /* star rating section */
-#star-rating {
+#rating {
   display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
+}
+
+#star-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row-reverse;
 }
 
