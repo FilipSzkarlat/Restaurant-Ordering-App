@@ -5,6 +5,7 @@ const orderSectionList = document.querySelector(".order-list");
 const summaryEl = document.querySelector(".summary");
 const paymentFormEl = document.querySelector("#payment-form");
 const afterPaymentInfo = document.querySelector("#after-payment-info");
+const starRating = document.querySelector("#star-rating");
 
 let order = [];
 let totalPrice = 0;
@@ -36,12 +37,10 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Event listener for the payment form -> showing the payment info and closing the order section
 paymentFormEl.addEventListener("submit", (e) => {
   e.preventDefault();
-  // const cardNumber = e.target.cardNumber.value;
   const name = document.querySelector(".form-name").value;
-  // const cardExpiration = e.target.cardExpiration.value;
-  // const cardCvv = e.target.cardCvv.value;
   showPaymentInfo(name);
 });
 
@@ -81,7 +80,6 @@ const renderOrder = (orderArr) => {
     totalPrice += item.price;
   });
   orderSectionList.innerHTML = content;
-  console.log(order);
   // if the discount is applied
   let discountClass = "discount-summary hidden";
   if (
@@ -114,6 +112,7 @@ function showPaymentInfo(name) {
   summaryEl.style.display = "none";
   afterPaymentInfo.style.display = "flex";
   afterPaymentInfo.innerHTML = `Thanks, ${name}! Your order is on its way`;
+  starRating.style.display = "flex";
 }
 
 render(menuArray);

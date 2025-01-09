@@ -215,3 +215,25 @@ button:active,
   margin-bottom: 0;
   color: green;
 }
+
+/* star rating section */
+#star-rating {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  flex-direction: row-reverse;
+}
+
+#star-rating input {
+  display: none;
+}
+
+#star-rating label {
+  font-size: 50px;
+}
+
+#star-rating input:checked ~ label,
+#star-rating input:hover ~ label {
+  color: #f5b301;
+}
