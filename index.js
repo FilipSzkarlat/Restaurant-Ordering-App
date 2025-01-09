@@ -81,8 +81,22 @@ const renderOrder = (orderArr) => {
     totalPrice += item.price;
   });
   orderSectionList.innerHTML = content;
+  console.log(order);
+  // if the discount is applied
+  let discountClass = "discount-summary hidden";
+  if (
+    order.length >= 2 &&
+    order.some((item) => item.name === "Beer") &&
+    order.some((item) => item.name !== "Beer")
+  ) {
+    totalPrice = (totalPrice * 0.85).toFixed(2);
+    discountClass = "discount-summary";
+  } else {
+    discountClass = "discount-summary hidden";
+  }
   // Rendering the summary
   summaryEl.innerHTML = `
+  <p class="${discountClass}">15% discount applied</p>
   <div class='total-price'>
     <p>Total price:</p> 
     <p class="order-price">$${totalPrice}</p>

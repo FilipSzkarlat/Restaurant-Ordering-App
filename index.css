@@ -209,3 +209,9 @@ button:active,
   text-shadow: white 1px 1px 1px;
   font-size: large;
 }
+
+.discount-summary {
+  font-size: 25px;
+  margin-bottom: 0;
+  color: green;
+}
