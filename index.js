@@ -6,6 +6,7 @@ const summaryEl = document.querySelector(".summary");
 const paymentFormEl = document.querySelector("#payment-form");
 const afterPaymentInfo = document.querySelector("#after-payment-info");
 const ratingEl = document.querySelector("#rating");
+const formNameInput = document.querySelector(".form-name");
 
 let order = [];
 let totalPrice = 0;
@@ -42,6 +43,13 @@ paymentFormEl.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = document.querySelector(".form-name").value;
   showPaymentInfo(name);
+});
+
+// Event listener for input name -> allow only letters
+formNameInput.addEventListener("input", (event) => {
+  const value = event.target.value;
+  // Remove any character that is not a letter
+  event.target.value = value.replace(/[^a-zA-Z]/g, "");
 });
 
 // Rendering the menu items
